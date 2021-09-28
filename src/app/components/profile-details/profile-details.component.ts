@@ -20,7 +20,7 @@ export class ProfileDetailsComponent implements OnInit {
     this.isAlbumsActive = true;
   }
 
-  onPhotosClick() {
+  onPostsClick() {
     this.isPostsActive = true;
     this.isAlbumsActive = false;
   }

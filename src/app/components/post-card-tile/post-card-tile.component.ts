@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Post } from 'src/app/models/post';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-post-card-tile',
@@ -7,17 +9,16 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PostCardTileComponent implements OnInit {
 
-  @Input() title: string = "Title";
-  @Input() description: string = "My long ass description right here";
-  @Input() comments: string[] = [
-    'Comment 1',
-    'Comment 2',
-    'Comment 3'
-  ];
+  @Input() post?: Post;
+  comments : Comment[] = [];
 
-  constructor() { }
+  constructor(private postService: PostService) { }
 
   ngOnInit(): void {
+    if (this.post) {
+      this.postService.getPostComments(this.post)
+      .subscribe(comments => this.comments = comments);
+    }
+    // need to call the service to get the comments and assign to self
   }
-
 }

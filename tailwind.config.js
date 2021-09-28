@@ -2,7 +2,11 @@ module.exports = {
   purge: ['./src/**/*.{html,ts}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      maxHeight: {
+        '(screen-16)': 'calc(100vh - 6rem)',
+      },
+    },
   },
   variants: {
     extend: {},

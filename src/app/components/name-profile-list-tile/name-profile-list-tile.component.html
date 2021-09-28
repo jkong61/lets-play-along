@@ -1,7 +1,16 @@
-<div class="rounded-md p-4 border-0 shadow-sm grid grid-cols-3 my-2 overflow-y-auto"
-[ngClass]="active ? 'bg-gray-400' : 'bg-gray-300'"
+<div class="rounded-md p-4 border-0 shadow-sm grid grid-cols-3 my-2 overflow-y-auto divide-x"
+  [ngClass]="active ? 'bg-gray-400' : 'bg-gray-300'"
   >
-  <span>{{ name }}</span>
-  <span>{{ phoneNumber }}</span>
-  <span>{{ website }}</span>
+  <div class="px-1">
+    <small class="text-gray-500">Name</small>
+    <div>{{ name }}</div>
+  </div>
+  <div class="px-1">
+    <small class="text-gray-500">Phone No.</small>
+    <div>{{ phoneNumber }}</div>
+  </div>
+  <div class="px-1 text-right">
+    <small class="text-gray-500">Website</small>
+    <div>{{ website }}</div>
+  </div>
 </div>

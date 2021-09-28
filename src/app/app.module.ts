@@ -14,6 +14,7 @@ import { PostsDetailsContentComponent } from './components/posts-details-content
 import { AlbumsDetailsContentComponent } from './components/albums-details-content/albums-details-content.component';
 import { AlbumsCardTileComponent } from './components/albums-card-tile/albums-card-tile.component';
 import { BASE_URL, BASE_URL_VALUE } from './configs/constants.config';
+import { ShortenPipe } from './pipes/custom-splice.pipe';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { BASE_URL, BASE_URL_VALUE } from './configs/constants.config';
     PostsDetailsContentComponent,
     AlbumsDetailsContentComponent,
     AlbumsCardTileComponent,
+    ShortenPipe,
   ],
   imports: [
     BrowserModule,

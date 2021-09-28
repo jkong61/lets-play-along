@@ -1,13 +1,13 @@
 <app-header></app-header>
 
-<div class="grid grid-cols-2 p-4 min-h-screen gap-4">
-  <div class="grid-card max-h-screen overflow-y-auto">
+<div class="grid grid-cols-2 p-4 gap-4">
+  <div class="grid-card max-h-(screen-16) overflow-y-auto">
     <app-name-profile-list-tile *ngFor="let user of userListing"
       [name]="user.name"
       [phoneNumber]="user.phone"
-      [active]="user.id === activeUserId"
+      [active]="user === activeUser"
       [website]="user.website"
-      (click)="onClick($event, user)"
+      (click)="onClick(user)"
     >
     </app-name-profile-list-tile>
   </div>

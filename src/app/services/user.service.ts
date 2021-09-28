@@ -13,6 +13,9 @@ export class UserService {
   private userListSubject: Subject<User[]> = new BehaviorSubject<User[]>([]);
   userList$ = this.userListSubject.asObservable();
 
+  private currentActiveUserSubject: Subject<User | undefined> = new BehaviorSubject<User | undefined>(undefined);
+  currentActiveUser$ = this.currentActiveUserSubject.asObservable();
+
   constructor(@Inject(BASE_URL) private baseUrl: string, private http: HttpClient) { }
 
   getUserListFromServer() {
@@ -31,5 +34,9 @@ export class UserService {
         return response;
       })
     )
+  }
+
+  setCurrentActiveUser(user: User) {
+    this.currentActiveUserSubject.next(user);
   }
 }

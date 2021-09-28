@@ -17,6 +17,6 @@
 
   .grid-card {
     @apply
-    bg-gray-200 p-3 rounded-md shadow-sm;
+    bg-gray-200 p-3 rounded-md h-full shadow-sm;
   }
 }

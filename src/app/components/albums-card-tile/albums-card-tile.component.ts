@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Ablum } from 'src/app/models/album';
+import { Photo } from 'src/app/models/photo';
+import { PhotoService } from 'src/app/services/photo.service';
 
 @Component({
   selector: 'app-albums-card-tile',
@@ -7,19 +10,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AlbumsCardTileComponent implements OnInit {
 
-  @Input() title: string = '';
-  @Input() photos: Photo[] = [];
+  @Input() album?: Ablum;
+  photos: Photo[] = [];
 
-  constructor() { }
+  constructor(private albumService: PhotoService) { }
 
   ngOnInit(): void {
+    if(this.album) {
+      this.albumService.getAlbumPhotos(this.album)
+      .subscribe(photos => this.photos = photos);
+    }
   }
-
-}
-
-interface Photo {
-  source: string;
-  description: string;
-  alternative: string;
-  slug: string;
 }
