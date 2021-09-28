@@ -6,6 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./name-profile-list-tile.component.css']
 })
 export class NameProfileListTileComponent implements OnInit {
+  @Input() active: boolean = false;
   @Input() name: string = '';
   @Input() phoneNumber: string = '';
   @Input() website: string = '';

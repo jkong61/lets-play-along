@@ -1,11 +1,7 @@
-<div class="bg-gray-300 rounded-md p-4 border-0 shadow-sm flex justify-between">
-  <span>
-    {{ name }}
-  </span>
-  <span>
-    {{phoneNumber}}
-  </span>
-  <span>
-    {{website}}
-  </span>
+<div class="rounded-md p-4 border-0 shadow-sm grid grid-cols-3 my-2 overflow-y-auto"
+[ngClass]="active ? 'bg-gray-400' : 'bg-gray-300'"
+  >
+  <span>{{ name }}</span>
+  <span>{{ phoneNumber }}</span>
+  <span>{{ website }}</span>
 </div>

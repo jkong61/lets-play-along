@@ -1,12 +1,14 @@
 <app-header></app-header>
 
 <div class="grid grid-cols-2 p-4 min-h-screen gap-4">
-  <div class="grid-card">
-    <!-- need for loop here -->
-    <app-name-profile-list-tile 
-      [name]="'Hello'"
-      [phoneNumber]="'RandomNumber'"
-      [website]="'www.blog.com'">
+  <div class="grid-card max-h-screen overflow-y-auto">
+    <app-name-profile-list-tile *ngFor="let user of userListing"
+      [name]="user.name"
+      [phoneNumber]="user.phone"
+      [active]="user.id === activeUserId"
+      [website]="user.website"
+      (click)="onClick($event, user)"
+    >
     </app-name-profile-list-tile>
   </div>
 
