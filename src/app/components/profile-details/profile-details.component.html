@@ -1,0 +1,20 @@
+<div class="flex flex-col h-full">
+  <div class="flex items-center">
+    <div class="flex-row space-x-2">
+      <button class="primary-btn" [class.opacity-50]="!isPostsActive" (click)="onPhotosClick()">Posts</button>
+      <button class="primary-btn" [class.opacity-50]="!isAlbumsActive" (click)="onAlbumClick()">Albums</button>
+    </div>
+    <div class="ml-4 flex-1 w-full">
+      <app-profile-search-bar></app-profile-search-bar>
+    </div>
+  </div>
+  
+  <div class="flex-1">
+    <app-posts-details-content *ngIf="isPostsActive"></app-posts-details-content>
+    <app-albums-details-content *ngIf="isAlbumsActive"></app-albums-details-content>
+  </div>
+
+  <div>
+    Footer for pagination here
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<app-header></app-header>
+
+<div class="grid grid-cols-2 p-4 min-h-screen gap-4">
+  <div class="grid-card">
+    <!-- need for loop here -->
+    <app-name-profile-list-tile 
+      [name]="'Hello'"
+      [phoneNumber]="'RandomNumber'"
+      [website]="'www.blog.com'">
+    </app-name-profile-list-tile>
+  </div>
+
+  <div class="grid-card">
+    <app-profile-details></app-profile-details>
+  </div>
+</div>
