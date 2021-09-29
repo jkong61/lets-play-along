@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Post } from 'src/app/models/post';
+import { PostComment } from 'src/app/models/post-comment';
 import { PostService } from 'src/app/services/post.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { PostService } from 'src/app/services/post.service';
 export class PostCardTileComponent implements OnInit {
 
   @Input() post?: Post;
-  comments : Comment[] = [];
+  comments : PostComment[] = [];
 
   constructor(private postService: PostService) { }
 

@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { BASE_URL } from '../configs/constants.config';
 import { Post } from '../models/post';
+import { PostComment } from '../models/post-comment';
 import { User } from '../models/user';
 import { UserService } from './user.service';
 
@@ -39,7 +40,7 @@ export class PostService {
 
   getPostComments(post: Post) {
     const commentsUrl = `${this.baseUrl}/post/${post.id}/comments/`
-    return this.http.get<Comment[]>(commentsUrl)
+    return this.http.get<PostComment[]>(commentsUrl)
   }
 
   resetPost() {

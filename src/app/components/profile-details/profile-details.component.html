@@ -16,10 +16,10 @@
 
   <div class="flex justify-between mx-2">
     <div>
-      <button *ngIf="pageIndex > 0" class="primary-btn" (click)="onClickPrevious()">Previous</button>
+      <button *ngIf="pageIndex > 0" class="primary-btn" (click)="onClickPrevious()">&lt; Previous</button>
     </div>
     <div>
-      <button *ngIf="pageIndex < numberOfPagesShouldPaginate" class="primary-btn" (click)="onClickNext()">Next</button>
+      <button *ngIf="pageIndex < numberOfPagesShouldPaginate" class="primary-btn" (click)="onClickNext()">Next &gt;</button>
     </div>
   </div>
 </div>
