@@ -1,8 +1,9 @@
 <div class="grid-card bg-gray-400">
   <h2 class="text-xl">{{ post?.title ?? '' | shorten:20 }}</h2>
-  <p>{{ post?.body ?? '' | shorten:70 }}</p>
-  <div class="mt-3 divide-y divide-black">
-    <p *ngFor="let comment of comments.slice(0,2)">
+  <p>{{ post?.body ?? '' | shorten:50 }}</p>
+  <small>Comments</small>
+  <div class="divide-y divide-black h-12 overflow-y-auto">
+    <p *ngFor="let comment of comments">
       <small>{{ comment.body | shorten:35 }}</small>
     </p>
   </div>

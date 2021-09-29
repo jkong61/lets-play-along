@@ -1,8 +1,7 @@
 <div 
   *ngIf="localPosts.length > 0; else otherTemplate"
-  class="grid grid-cols-2 grid-rows-2 gap-6 py-4">
+  class="grid grid-cols-2 grid-rows-2 gap-6 py-4 h-full">
 
-  <!-- Temporary until pagination is ready -->
   <app-post-card-tile *ngFor="let post of localPosts.slice(itemTracker[0], itemTracker[1])"
     [post]="post"
   ></app-post-card-tile>

@@ -127,7 +127,6 @@ export class ProfileDetailsComponent implements OnInit, OnDestroy {
   }
 
   resetPageIndex() {
-    console.log("reset");
     this.pageIndex = 0;
     this.firstAndLastItem = [0, this.isPostsActive ? this.maxNumOfPosts : this.maxNumOfAlbums ];
   }

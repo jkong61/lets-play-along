@@ -1,7 +1,7 @@
 <div class="grid-card bg-gray-400">
   <h2 class="text-xl">{{ album?.title ?? '' | shorten:17 }}</h2>
-  <div class="mt-2 divide-y divide-black">
-    <p *ngFor="let photo of photos.slice(0,2)">
+  <div class="mt-1 divide-y divide-black h-14 overflow-y-auto">
+    <p *ngFor="let photo of photos">
       <img class="w-4 h-4 inline mr-3 my-1 rounded-full" [src]="photo.thumbnailUrl"/>
       <small>{{ photo.title | shorten:20 }}</small>
     </p>
