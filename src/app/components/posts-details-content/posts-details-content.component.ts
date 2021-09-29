@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Post } from 'src/app/models/post';
@@ -11,6 +11,7 @@ import { PostService } from 'src/app/services/post.service';
 })
 export class PostsDetailsContentComponent implements OnInit, OnDestroy {
 
+  @Input() itemTracker: number[] = [0,0];
   localPosts:Post[] = [];
 
   private ngUnSubscribeSubject = new Subject();

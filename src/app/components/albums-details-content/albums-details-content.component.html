@@ -3,7 +3,7 @@
   class="grid grid-cols-2 grid-rows-3 gap-4 py-4">
 
   <!-- Temporary until pagination is ready -->
-  <app-albums-card-tile *ngFor="let album of localAlbums.slice(0,6)"
+  <app-albums-card-tile *ngFor="let album of localAlbums.slice(itemTracker[0], itemTracker[1])"
     [album]="album"></app-albums-card-tile>
 </div>
 

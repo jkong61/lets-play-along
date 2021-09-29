@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Ablum } from 'src/app/models/album';
@@ -11,6 +11,7 @@ import { PhotoService } from 'src/app/services/photo.service';
 })
 export class AlbumsDetailsContentComponent implements OnInit, OnDestroy {
 
+  @Input() itemTracker: number[] = [0,0];
   localAlbums: Ablum[] = [];
 
   private ngUnSubscribeSubject = new Subject();

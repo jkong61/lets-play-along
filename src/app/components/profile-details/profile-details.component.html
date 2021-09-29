@@ -10,11 +10,16 @@
   </div>
   
   <div class="flex-1">
-    <app-posts-details-content *ngIf="isPostsActive"></app-posts-details-content>
-    <app-albums-details-content *ngIf="isAlbumsActive"></app-albums-details-content>
+    <app-posts-details-content [itemTracker]="firstAndLastItem" *ngIf="isPostsActive"></app-posts-details-content>
+    <app-albums-details-content [itemTracker]="firstAndLastItem" *ngIf="isAlbumsActive"></app-albums-details-content>
   </div>
 
-  <div>
-    Footer for pagination here
+  <div class="flex justify-between mx-2">
+    <div>
+      <button *ngIf="pageIndex > 0" class="primary-btn" (click)="onClickPrevious()">Previous</button>
+    </div>
+    <div>
+      <button *ngIf="pageIndex < numberOfPagesShouldPaginate" class="primary-btn" (click)="onClickNext()">Next</button>
+    </div>
   </div>
 </div>

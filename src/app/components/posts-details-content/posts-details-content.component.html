@@ -3,7 +3,7 @@
   class="grid grid-cols-2 grid-rows-2 gap-6 py-4">
 
   <!-- Temporary until pagination is ready -->
-  <app-post-card-tile *ngFor="let post of localPosts.slice(0,4)"
+  <app-post-card-tile *ngFor="let post of localPosts.slice(itemTracker[0], itemTracker[1])"
     [post]="post"
   ></app-post-card-tile>
 </div>
