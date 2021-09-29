@@ -27,9 +27,9 @@ export class PhotoService {
     .subscribe(user => this.currentActiveUser = user);
   }
 
-  getAlbum() {
+  getAlbums(query? : string) {
     if (this.currentActiveUser) {
-      const postsUrl = `${this.baseUrl}/user/${this.currentActiveUser.id}/albums/`
+      const postsUrl = `${this.baseUrl}/user/${this.currentActiveUser.id}/albums` + `${query ? '?q='.concat(query) : ''}`
       return this.http.get<Ablum[]>(postsUrl)
       .pipe(
         tap(albums => this.albumListSubject.next(albums))

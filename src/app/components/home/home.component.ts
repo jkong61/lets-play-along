@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       error => console.log(error)
     );
 
-    this.albumService.getAlbum()?.subscribe(
+    this.albumService.getAlbums()?.subscribe(
       () => {},
       error => console.log(error)
     );

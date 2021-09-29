@@ -118,10 +118,17 @@ export class ProfileDetailsComponent implements OnInit, OnDestroy {
   }
 
   private returnShouldPaginate(numberOfItemsPerPage: number, numberOfItems?: number) {
-    return Math.floor((numberOfItems ?? 0)/numberOfItemsPerPage);
+    const overflow = (numberOfItems ?? 0) % numberOfItemsPerPage;
+    let pages = Math.floor((numberOfItems ?? 0)/numberOfItemsPerPage);
+    if (overflow === 0) {
+      pages -= 1;
+    }
+    return pages;
   }
 
-  private resetPageIndex() {
+  resetPageIndex() {
+    console.log("reset");
     this.pageIndex = 0;
+    this.firstAndLastItem = [0, this.isPostsActive ? this.maxNumOfPosts : this.maxNumOfAlbums ];
   }
 }

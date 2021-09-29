@@ -15,6 +15,7 @@ import { AlbumsDetailsContentComponent } from './components/albums-details-conte
 import { AlbumsCardTileComponent } from './components/albums-card-tile/albums-card-tile.component';
 import { BASE_URL, BASE_URL_VALUE } from './configs/constants.config';
 import { ShortenPipe } from './pipes/custom-splice.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ShortenPipe } from './pipes/custom-splice.pipe';
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule
     // AppRoutingModule
   ],
   providers: [{

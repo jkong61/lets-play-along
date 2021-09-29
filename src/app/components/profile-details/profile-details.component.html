@@ -5,7 +5,11 @@
       <button class="primary-btn" [class.opacity-50]="!isAlbumsActive" (click)="onAlbumClick()">Albums</button>
     </div>
     <div class="ml-4 flex-1 w-full">
-      <app-profile-search-bar></app-profile-search-bar>
+      <app-profile-search-bar
+        [album]="isAlbumsActive"
+        [post]="isPostsActive"
+        (newEvent)="resetPageIndex()">
+      </app-profile-search-bar>
     </div>
   </div>
   

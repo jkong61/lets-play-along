@@ -27,9 +27,9 @@ export class PostService {
         .subscribe(user => this.currentActiveUser = user);
   }
 
-  getPosts() {
+  getPosts(query? : string) {
     if (this.currentActiveUser) {
-      const postsUrl = `${this.baseUrl}/user/${this.currentActiveUser.id}/posts/`
+      const postsUrl = `${this.baseUrl}/user/${this.currentActiveUser.id}/posts` + `${query ? '?q='.concat(query) : ''}`
       return this.http.get<Post[]>(postsUrl)
       .pipe(
         tap(posts => this.postsListSubject.next(posts))
